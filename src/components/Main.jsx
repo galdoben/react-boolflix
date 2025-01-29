@@ -1,10 +1,11 @@
 import { useContext } from "react";
-import { GlobalContext } from "../content/GlobalContext";
+import { useGlobalContext } from "../content/GlobalContext";
 import { useState } from "react";
-
+import Card from "./Card";
 const Main = () => {
     const [query, setQuery] = useState(""); // Stato per l'input dell'utente
-    const { movies } = useContext(GlobalContext);
+    const { movies } = useGlobalContext()
+    console.log(movies);
     return (
         <div>
             <div className="container mt-4">
@@ -12,10 +13,12 @@ const Main = () => {
                     <div className="row">
                         {movies.map((movie) => (
                             <Card key={movie.id} movie={movie} />
+
                         ))}
+
                     </div>
                 ) : (
-                    <p className="text-center text-muted">
+                    <p className="text-center">
                         {query
                             ? "Nessun film trovato."
                             : "Inserisci una parola chiave per iniziare la ricerca."}
