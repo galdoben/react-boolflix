@@ -27,11 +27,11 @@ const CardSeries = ({ tv }) => {
 
     return (
 
-        <div className="col-md-4 mb-4">
+        <div className="col-md-3 mb-4">
 
-            <div className="card shadow-sm border-0">
+            <div className="card movie-card">
                 <img src={backdropUrl} className="card-img-top rounded" alt={tv.original_name} />
-                <div className="card-body text-center">
+                <div className="card-overlay">
                     <h5 className="card-title fw-bold">{tv.original_name}</h5>
                     <p className="card-text">
                         Lingua Originale: <img src={flagUrl} alt={tv.original_language} />

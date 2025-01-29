@@ -1,42 +1,105 @@
 header {
-    background-color: #141313;
+    background-color: rgb(20, 19, 19);
     padding: 23px 33px !important;
 }
 
 .navbar-brand {
-    font-size: 1.9rem !important;
+    font-size: 2.3rem !important;
     font-weight: bold;
-    color: #e50914 !important;
+    color: rgb(229, 9, 20) !important;
     font-family: 'Poppins', sans-serif;
-    letter-spacing: 2px !important;
+    letter-spacing: 3px !important;
 }
 
 .container-fluid {
-    background-color: rgb(221, 158, 50);
+    background-color: rgb(238, 167, 44);
 }
 
 input {
     width: 300px !important;
     border-radius: 23px !important;
     padding: 7px 11px !important;
-    border: 1px solid #e50914 !important;
-    background-color: #180602 !important;
+    border: 1px solid rgb(229, 9, 20) !important;
+    background-color: rgb(24, 6, 2) !important;
     color: white !important;
 }
 
 
 /* MAIN */
 h2 {
-    font-size: 1.8rem !important;
-    font-weight: bold !important;
-    color: #e50914 !important;
+    font-size: 1.5rem !important;
+    font-family: 'Poppins', sans-serif !important;
+    color: white !important;
     text-transform: uppercase !important;
     margin-bottom: 15px !important;
-    border-bottom: 2px solid #e50914 !important;
+    border-bottom: 2px solid rgb(238, 167, 44) !important;
     padding-bottom: 5px !important;
 }
 
 body {
-    background-color: #141414 !important;
+    background-color: rgb(20, 20, 20) !important;
     font-family: Arial, sans-serif !important;
+}
+
+/* CARD */
+
+.card {
+    height: 300px !important;
+}
+
+.card-img-top {
+    height: 300px;
+    object-fit: cover;
+}
+
+.movie-card {
+    position: relative !important;
+    overflow: hidden !important;
+    border-radius: 10px !important;
+    transition: transform 0.3s ease-in-out !important;
+}
+
+.movie-card img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+    /*zoom*/
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity;
+}
+
+.movie-card:hover .card-overlay {
+    opacity: 1;
+}
+
+.card-text img {
+    width: 20px;
+    height: auto;
+    margin-left: 5px;
+}
+
+.card-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

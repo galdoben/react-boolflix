@@ -14,7 +14,7 @@ const Main = () => {
             <div className="container mt-4">
                 {movies.length > 0 ? (
                     <div className="row">
-                        <h2>Film</h2>
+                        <h2>ORIGINALI BOOLFLIX</h2>
                         {movies.map((movie) => (
                             <Card key={movie.id} movie={movie} />
 
@@ -29,8 +29,8 @@ const Main = () => {
                     </p>
                 )}
                 {tvShow.length > 0 ? (
-                    <div className="row mt-5">
-                        <h2>Serie Tv</h2>
+                    <div className="row">
+                        <h2>ORIGINALI BOOLFLIX</h2>
                         {tvShow.map((tv) => (
                             <CardSeries key={tv.id} tv={tv} />
                         ))}

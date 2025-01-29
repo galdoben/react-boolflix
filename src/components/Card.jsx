@@ -1,3 +1,4 @@
+import RaitingStars from "./RaitingStars";
 
 
 const Card = ({ movie }) => {
@@ -22,7 +23,7 @@ const Card = ({ movie }) => {
     const countryFlag = languageCountry[movie.original_language] || "us";
     const flagUrl = `https://flagcdn.com/w40/${countryFlag}.png`
     return (
-        <div className="col-md-4 mb-4">
+        <div className="col-md-3 mb-4">
 
             <div className="card movie-card">
                 <img src={backdropUrl} className="card-img-top rounded" alt={movie.original_title} />
@@ -31,11 +32,9 @@ const Card = ({ movie }) => {
                     <p className="card-text">
                         Lingua Originale: <img src={flagUrl} alt={movie.original_language} />
                     </p>
+                    <RaitingStars rating={movie.vote_average} />
                     <p className="card-text">
-                        ⭐ Voto: <strong>{movie.vote_average.toFixed(1)}</strong> / 10
-                    </p>
-                    <p className="card-text">
-                        {movie.overview ? movie.overview.slice(0, 50) + "..." : "Nessuna descrizione disponibile."}
+                        {movie.overview ? movie.overview.slice(0, 53) + "..." : "Nessuna descrizione disponibile."}
                     </p>
                 </div>
             </div>
