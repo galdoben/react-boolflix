@@ -23,9 +23,10 @@ const Card = ({ movie }) => {
     const flagUrl = `https://flagcdn.com/w40/${countryFlag}.png`
     return (
         <div className="col-md-4 mb-4">
-            <div className="card shadow-sm border-0">
+
+            <div className="card movie-card">
                 <img src={backdropUrl} className="card-img-top rounded" alt={movie.original_title} />
-                <div className="card-body text-center">
+                <div className="card-overlay">
                     <h5 className="card-title fw-bold">{movie.original_title}</h5>
                     <p className="card-text">
                         Lingua Originale: <img src={flagUrl} alt={movie.original_language} />
@@ -36,7 +37,6 @@ const Card = ({ movie }) => {
                     <p className="card-text">
                         {movie.overview ? movie.overview.slice(0, 50) + "..." : "Nessuna descrizione disponibile."}
                     </p>
-                    <button className="btn btn-primary w-100">Dettagli</button>
                 </div>
             </div>
         </div>

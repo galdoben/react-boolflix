@@ -8,12 +8,12 @@ const GlobalContext = createContext();
 const GlobalProvider = ({ children }) => {
     const [query, setQuery] = useState(""); // Stato per l'input dell'utente
     const [movies, setMovies] = useState([]);
-    const [series, setSeries] = useState([]);
+    const [tvShow, setTvShow] = useState([]);
 
-    const queryTest = "The Office";
+    // const queryTest = "The Office";
     const apiKey = "a433ce6c22ece22d747faebbc7095962";
     const urlMovies = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query}`;
-    const urlSeries = `https://api.themoviedb.org/3/search/tv?api_key=${apiKey}&query=${queryTest}`;
+    const urlTvShow = `https://api.themoviedb.org/3/search/tv?api_key=${apiKey}&query=${query}`;
 
 
     const fetchMovies = () => {
@@ -22,19 +22,19 @@ const GlobalProvider = ({ children }) => {
                 setMovies(res.data.results)
             });
     }
-    const fetchSeries = () => {
-        axios.get(urlSeries)
+    const fetchTvShow = () => {
+        axios.get(urlTvShow)
             .then(res => {
                 console.log(res.data);  // Verifica tutta la risposta
                 console.log(res.data.results);  // Verifica solo i risultati
-                setSeries(res.data.results)
+                setTvShow(res.data.results)
             });
     }
 
 
 
     return (
-        <GlobalContext.Provider value={{ query, setQuery, movies, fetchMovies, setMovies, series, setSeries, fetchSeries }}>
+        <GlobalContext.Provider value={{ query, setQuery, movies, fetchMovies, setMovies, tvShow, setTvShow, fetchTvShow }}>
             {children}
         </GlobalContext.Provider>
     )
